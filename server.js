@@ -18,19 +18,21 @@ app.post("/api/bookings", async (req, res) => {
 	try {
 		const { firstName, lastName, meetingDate } = req.body;
 		const apiKey =
-			process.env.ONCEHUB_API_KEY || "ca8db556a07feececa3d44838b2ab467";
+			process.env.ONCEHUB_API_KEY || "6d998013ffdb70d9adcfd8f2e08a6753";
+		const bookingPageId = "PAGE-65FEE871AE";
 
 		console.log("\n=== NEW BOOKING REQUEST ===");
 		console.log("Name:", firstName, lastName);
 		console.log("Date:", meetingDate);
 		console.log("API Key:", apiKey);
+		console.log("Booking Page ID:", bookingPageId);
 
 		// Format the date
 		const formattedDate = new Date(meetingDate).toISOString();
 
 		// Payload to send to OnceHub
 		const bookingPayload = {
-			bookingpage_id: apiKey,
+			bookingpage_id: bookingPageId,
 			contact: {
 				firstname: firstName,
 				lastname: lastName,
@@ -82,7 +84,7 @@ app.listen(PORT, () => {
 	console.log("📡 Backend ready to handle booking requests!");
 	console.log(
 		"API Key:",
-		process.env.ONCEHUB_API_KEY || "ca8db556a07feececa3d44838b2ab467"
+		process.env.ONCEHUB_API_KEY || "6d998013ffdb70d9adcfd8f2e08a6753"
 	);
 	console.log("\n");
 });
