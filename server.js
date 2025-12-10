@@ -18,8 +18,8 @@ app.post("/api/bookings", async (req, res) => {
 	try {
 		const { firstName, lastName, meetingDate } = req.body;
 		const apiKey =
-			process.env.ONCEHUB_API_KEY || "6d998013ffdb70d9adcfd8f2e08a6753";
-		const bookingPageId = "PAGE-65FEE871AE";
+			process.env.ONCEHUB_API_KEY || "5f6a2109b1a8710fef2437bfd0e02017";
+		const bookingPageId = "PAGE-A61F541AFF";
 
 		console.log("\n=== NEW BOOKING REQUEST ===");
 		console.log("Name:", firstName, lastName);
@@ -84,7 +84,7 @@ app.listen(PORT, () => {
 	console.log("📡 Backend ready to handle booking requests!");
 	console.log(
 		"API Key:",
-		process.env.ONCEHUB_API_KEY || "6d998013ffdb70d9adcfd8f2e08a6753"
+		process.env.ONCEHUB_API_KEY || "5f6a2109b1a8710fef2437bfd0e02017"
 	);
 	console.log("\n");
 });
